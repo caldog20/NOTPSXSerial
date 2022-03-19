@@ -94,9 +94,12 @@ public class GDB {
 
     }
 
-    public static void Init( UInt32 localPort, string localIP = "" ) {
+    public static void Init( UInt32 localPort, string localIP = "", bool enableSSDP = false ) {
 
         InitListenServer( localPort, localIP );
+        if ( enableSSDP ) {
+            SSDP.Publish( localIP, localPort );
+        }
         MonitorSerialToSocket();
 
     }

@@ -53,6 +53,9 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="Rssdp">
+      <HintPath>packages\Rssdp.4.0.4\lib\net45\Rssdp.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="comport.txt" />
@@ -182,6 +185,7 @@
     <None Include="build.bat" />
     <None Include="build.sh" />
     <None Include="README.md" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="TargetDataPort.cs" />
@@ -192,6 +196,7 @@
     <Compile Include="TCPTarget.cs" />
     <Compile Include="TransferLogic.cs" />
     <Compile Include="Utils.cs" />
+    <Compile Include="Ssdp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include=".git\objects\info\" />

@@ -451,6 +451,7 @@ internal partial class Program {
     static bool enterSlowMode = false;
 
     static bool monitorComms = false;
+    static bool enableSSDP = false;
     static bool usingCachedPortOrAddress = false;
 
 
@@ -551,6 +552,9 @@ internal partial class Program {
                 remainingArgs.RemoveAt( i );
             } else if ( lower == "/slow" ) {
                 enterSlowMode = true;
+                remainingArgs.RemoveAt( i );
+            } else if (lower == "/ssdp") {
+                enableSSDP = true;
                 remainingArgs.RemoveAt( i );
             } else {
                 allArgsAreSecondary = false;
@@ -1194,7 +1198,7 @@ internal partial class Program {
         }
 
         if ( argCommand == CommandMode.BRIDGE ) {
-            GDB.Init( argListenPort, argIP );
+            GDB.Init( argListenPort, argIP, enableSSDP );
         }
 
         //
