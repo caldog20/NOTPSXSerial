@@ -83,7 +83,7 @@
 // See github for further release info.
 
 
-#define DebugArgs
+//#define DebugArgs
 
 using System;
 using System.Collections.Generic;
